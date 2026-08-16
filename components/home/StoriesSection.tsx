@@ -43,27 +43,29 @@ export function StoriesSection({ stories }: { stories: Story[] }) {
         {stories.map((story) => (
           <div
             key={story.slug}
-            className="grid w-full shrink-0 snap-start gap-8 sm:grid-cols-2 sm:items-center"
+            className="flex w-full shrink-0 snap-start flex-col gap-8 sm:h-[543px] sm:flex-row sm:items-start sm:gap-10"
           >
-            <div className="relative aspect-4/3 overflow-hidden rounded-card">
+            <div className="relative box-border h-64 w-full shrink-0 overflow-hidden rounded-card sm:h-[543px] sm:w-[630px] sm:rounded-none">
               <Image
                 src={story.image}
                 alt={story.title}
                 fill
                 sizes="(min-width: 640px) 50vw, 100vw"
-                className="object-cover"
+                className="object-contain"
               />
             </div>
-            <div>
-              <h3 className="text-2xl leading-[1.2] font-semibold text-text">
-                {story.title}
-              </h3>
-              <p className="mt-4 text-lg leading-[1.6] text-text">
-                {story.excerpt}
-              </p>
+            <div className="flex flex-col sm:h-[533px] sm:w-[604px] sm:gap-[100px]">
+              <div className="flex flex-col items-start gap-[21px]">
+                <h3 className="text-[42px] leading-[50px] font-semibold text-text">
+                  {story.title}
+                </h3>
+                <p className="text-[22px] leading-[33px] text-text">
+                  {story.excerpt}
+                </p>
+              </div>
               <a
                 href="#"
-                className="box-border mt-8 inline-flex h-14 w-47.5 items-center justify-between border border-text bg-card p-4"
+                className="box-border inline-flex h-[56px] w-[178px] items-center justify-between border border-text bg-card p-4"
               >
                 <span className="text-default leading-5.5 font-medium text-text">
                   Read Article

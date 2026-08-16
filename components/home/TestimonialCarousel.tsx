@@ -58,9 +58,14 @@ export function TestimonialCarousel({
               />
             </div>
             <div className="flex min-w-0 flex-1 flex-col justify-center gap-[42px] border border-[#D9D9D9] p-[31px] sm:h-[431px] sm:w-[838px] sm:flex-none">
-              <span aria-hidden className="font-sans text-[67px] leading-[51px] font-bold text-white/20">
-                &ldquo;
-              </span>
+              <Image
+                src="/images/for-quote.svg"
+                alt=""
+                aria-hidden
+                width={67}
+                height={51}
+                className="h-[51px] w-[67px] shrink-0 object-contain"
+              />
               <p className="text-[22px] leading-[33px] text-white">
                 {t.quote}
               </p>
