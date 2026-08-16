@@ -59,8 +59,8 @@ export function CourseAccordionList({ courses }: { courses: Course[] }) {
                 >
                   <div className="min-h-0">
                     <div className="flex items-start gap-3">
-                      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border-2 border-magenta">
-                        <ArrowRight className="h-4 w-4 text-magenta" />
+                      <span className="flex h-9 w-9 shrink-0 items-center justify-center">
+                        <ArrowRight className="h-9 w-9 stroke-2 text-magenta" />
                       </span>
                       <p className="text-lg leading-[1.6] text-text">
                         {course.summary}

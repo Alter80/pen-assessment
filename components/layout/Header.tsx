@@ -37,55 +37,57 @@ export function Header() {
   const navItems = isHomepage ? simpleNavItems : fullNavItems;
 
   return (
-    <header className="sticky top-0 z-50 bg-card-alt">
+    <header className="sticky top-0 z-50 border-b border-border/40 bg-card-alt bg-[repeating-linear-gradient(90deg,transparent_0,transparent_319px,rgba(56,69,132,0.28)_320px,transparent_321px)]">
       <div className="frame flex h-25 items-center justify-between">
         <Link href="/" className="shrink-0">
           <LogoLockup />
         </Link>
 
-        <nav className="hidden items-center gap-13.75 lg:flex">
-          {navItems.map((item) => (
+        <div className="flex items-center justify-end gap-15.75 lg:w-[800px] lg:justify-end">
+          <nav className="hidden items-center gap-13.75 lg:flex">
+            {navItems.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                className="flex items-center gap-1 text-default font-medium uppercase text-text transition-colors hover:text-white"
+              >
+                {!isHomepage && <span className="text-pink">/</span>}
+                {item.label}
+                {item.hasDropdown && <ChevronRight className="h-4 w-4" />}
+              </Link>
+            ))}
+          </nav>
+
+          {!isHomepage && (
             <Link
-              key={item.label}
-              href={item.href}
-              className="flex items-center gap-1 text-default font-medium uppercase text-text transition-colors hover:text-white"
+              href="#"
+              className="hidden items-center gap-2 rounded-btn border border-border bg-navy px-6 py-3 text-default font-medium text-white transition-colors hover:bg-card-alt lg:inline-flex"
             >
-              {!isHomepage && <span className="text-pink">/</span>}
-              {item.label}
-              {item.hasDropdown && <ChevronRight className="h-4 w-4" />}
+              Apply Now
+              <ArrowRight className="h-4 w-4" />
             </Link>
-          ))}
-        </nav>
-
-        {!isHomepage && (
-          <Link
-            href="#"
-            className="hidden items-center gap-2 rounded-btn border border-border bg-navy px-6 py-3 text-default font-medium text-white transition-colors hover:bg-card-alt lg:inline-flex"
-          >
-            Apply Now
-            <ArrowRight className="h-4 w-4" />
-          </Link>
-        )}
-
-        <button
-          type="button"
-          onClick={() => setMenuOpen((v) => !v)}
-          className={cn(
-            "inline-flex h-8 w-8 items-center justify-center text-text",
-            !isHomepage && "lg:hidden"
           )}
-          aria-label={menuOpen ? "Close menu" : "Open menu"}
-          aria-expanded={menuOpen}
-        >
-          {menuOpen ? <X className="h-7 w-7" /> : <HamburgerIcon />}
-        </button>
+
+          <button
+            type="button"
+            onClick={() => setMenuOpen((v) => !v)}
+            className={cn(
+              "inline-flex h-8 w-8 items-center justify-center text-text",
+              !isHomepage && "lg:hidden",
+            )}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+          >
+            {menuOpen ? <X className="h-7 w-7" /> : <HamburgerIcon />}
+          </button>
+        </div>
       </div>
 
       <div
         className={cn(
           "overflow-hidden border-t border-border/40 bg-card-alt transition-[max-height] duration-300",
           isHomepage ? "" : "lg:hidden",
-          menuOpen ? "max-h-96" : "max-h-0"
+          menuOpen ? "max-h-96" : "max-h-0",
         )}
       >
         <nav className="frame flex flex-col gap-5 py-6">

@@ -12,12 +12,14 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <CourseAccordionList courses={courses} />
-      <QuoteBanner />
-      <CampusCarousel campuses={campuses} />
-      <TestimonialCarousel testimonials={testimonials} />
-      <PartnerLogos partners={partners} />
-      <StoriesSection stories={stories} />
+      <div className="relative bg-[repeating-linear-gradient(90deg,transparent_0,transparent_319px,rgba(56,69,132,0.28)_320px,transparent_321px)]">
+        <CourseAccordionList courses={courses} />
+        <QuoteBanner />
+        <CampusCarousel campuses={campuses} />
+        <TestimonialCarousel testimonials={testimonials} />
+        <PartnerLogos partners={partners} />
+        <StoriesSection stories={stories} />
+      </div>
     </>
   );
 }

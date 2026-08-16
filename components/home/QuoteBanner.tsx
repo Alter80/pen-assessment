@@ -4,8 +4,6 @@ import { DecorativeCircles } from "@/components/layout/DecorativeCircles";
 export function QuoteBanner() {
   return (
     <section className="frame relative overflow-hidden py-20 lg:min-h-[979px] lg:py-[120px]">
-      <div className="pointer-events-none absolute inset-y-0 left-1/2 hidden w-screen -translate-x-1/2 bg-[repeating-linear-gradient(90deg,transparent_0,transparent_319px,rgba(56,69,132,0.28)_320px,transparent_321px)] lg:block" />
-
       <DecorativeCircles className="left-[319px] top-[182px] hidden h-[590px] w-[927px] rotate-[19.89deg] opacity-50 lg:block" />
 
       <div className="relative z-20 flex h-auto w-full max-w-[832px] flex-wrap content-start items-start lg:h-[210px] lg:w-[832px]">

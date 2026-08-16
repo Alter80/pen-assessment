@@ -3,8 +3,8 @@ import type { Partner } from "@/data/content";
 
 export function PartnerLogos({ partners }: { partners: Partner[] }) {
   return (
-    <section className="relative min-h-[584px] overflow-hidden bg-deep py-[120px]">
-      <Image src="/images/our-partner-bg-circle.svg" alt="" width={665} height={584} aria-hidden className="pointer-events-none absolute right-[220px] top-0 h-[584px] w-[665px] opacity-100" />
+    <section className="relative mx-auto min-h-[584px] max-w-[1440px] overflow-hidden py-[120px]">
+      <Image src="/images/our-partner-bg-circle.svg" alt="" width={665} height={584} aria-hidden className="pointer-events-none absolute left-1/2 top-0 z-0 h-[584px] w-[665px] opacity-100" />
       <div className="frame relative z-10 flex items-center justify-between gap-[76px]">
 
         <div className="w-[744px] shrink-0">

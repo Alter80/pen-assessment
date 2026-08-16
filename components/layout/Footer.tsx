@@ -1,8 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { LogoMark } from "./Logo";
-import { DecorativeCircles } from "./DecorativeCircles";
-import { accreditations } from "@/data/content";
 import {
   FacebookIcon,
   InstagramIcon,
@@ -30,12 +27,12 @@ const socials = [
 
 export function Footer() {
   return (
-    <footer className="relative mt-32 overflow-hidden border-t border-border/40 bg-deep">
-      <DecorativeCircles className="-right-32 -top-32" />
+    <footer className="relative overflow-hidden border-t border-border/40 bg-deep bg-[repeating-linear-gradient(90deg,transparent_0,transparent_319px,rgba(56,69,132,0.28)_320px,transparent_321px)]">
+      <Image src="/images/footer/footer-circle-bg.svg" alt="" width={665} height={584} aria-hidden className="pointer-events-none absolute right-0 top-0 h-[584px] w-[665px] opacity-100" />
 
       <div className="frame relative py-20">
         <Link href="/" className="inline-block">
-          <LogoMark />
+          <Image src="/images/footer/footer-logo-main.svg" alt="Victoria College of Arts and Design" width={86} height={78} className="h-[78px] w-[86px] object-contain" />
         </Link>
 
         <h2 className="mt-8 max-w-3xl text-[48px] leading-[1.17] font-semibold text-text">
@@ -44,8 +41,9 @@ export function Footer() {
           into a rewarding career.
         </h2>
 
-        <div className="mt-14 grid gap-10 border-t border-border/40 pt-10 lg:grid-cols-[1fr_1fr_1fr] lg:items-start">
-          <div className="flex gap-3">
+        <div className="mt-14 grid gap-10 border-t border-border/40 pt-10 lg:grid-cols-[535px_1fr] lg:items-start">
+          <div className="flex flex-col gap-11">
+            <div className="flex gap-2">
             {socials.map(({ Icon, label, filled }) => (
               <Link
                 key={label}
@@ -53,51 +51,45 @@ export function Footer() {
                 aria-label={label}
                 className={
                   filled
-                    ? "flex h-11 w-11 items-center justify-center rounded-full bg-white text-base transition-opacity hover:opacity-80"
-                    : "flex h-11 w-11 items-center justify-center rounded-full bg-card text-text transition-colors hover:bg-card-alt"
+                    ? "flex h-10 w-10 items-center justify-center rounded-[34px] border border-[#fafdff] bg-white text-[#033d61] transition-opacity hover:opacity-80"
+                    : "flex h-10 w-10 items-center justify-center rounded-[34px] bg-white/10 text-white transition-colors hover:bg-white/20"
                 }
               >
-                <Icon className="h-4 w-4" />
+                <Icon className="h-3.5 w-3.5" />
               </Link>
             ))}
-          </div>
+            </div>
 
-          <div className="grid grid-cols-2 gap-x-8 gap-y-4">
-            {linkColumns.map(([a, b]) => (
-              <div key={a} className="flex flex-col gap-4">
-                <Link
-                  href="#"
-                  className="text-default text-text/80 hover:text-white"
-                >
-                  / {a}
+            <div className="grid grid-cols-4 gap-x-[55px] gap-y-4">
+              {linkColumns.flat().map((label) => (
+                <Link key={label} href="#" className="whitespace-nowrap text-base leading-[22px] font-medium text-text hover:text-white">
+                  {label}
                 </Link>
-                <Link
-                  href="#"
-                  className="text-default text-text/80 hover:text-white"
-                >
-                  / {b}
-                </Link>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
           <div className="lg:text-right">
             <a
               href="mailto:enquiry_office@vcad.co.uk"
-              className="text-card-title font-semibold text-white hover:text-pink"
+              className="text-[30px] leading-9 font-semibold text-white hover:text-pink"
             >
               enquiry_office@vcad.co.uk
             </a>
             <p className="mt-3 text-default text-text/80">020 3278 9857</p>
             <div className="mt-6 flex items-center gap-4 lg:justify-end">
-              {accreditations.map((badge) => (
+              {[
+                ["footer-logo1.svg", "AdvanceHE"],
+                ["footer-logo2.png", "QAA"],
+                ["footer-logo3.png", "Cyber Essentials"],
+              ].map(([file, name]) => (
                 <div
-                  key={badge.name}
-                  className="relative h-14 w-16 overflow-hidden rounded-chip"
+                  key={file}
+                  className="relative h-12 w-16 overflow-hidden"
                 >
                   <Image
-                    src={badge.logo}
-                    alt={badge.name}
+                    src={`/images/footer/${file}`}
+                    alt={name}
                     fill
                     sizes="64px"
                     className="object-contain"

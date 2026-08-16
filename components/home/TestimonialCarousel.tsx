@@ -14,7 +14,6 @@ export function TestimonialCarousel({
 
   return (
     <section className="frame relative min-h-[850px] overflow-hidden py-20 lg:py-[120px]">
-      <div className="pointer-events-none absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent_0,transparent_319px,rgba(56,69,132,0.28)_320px,transparent_321px)]" />
       <div className="relative z-10 flex flex-nowrap items-center justify-between gap-6">
         <div className="w-[832px] shrink-0">
           <p className="text-[22px] leading-[1.2] font-bold uppercase text-magenta-light">
