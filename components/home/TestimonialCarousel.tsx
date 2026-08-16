@@ -13,17 +13,18 @@ export function TestimonialCarousel({
   const { trackRef, scrollPrev, scrollNext } = useCarousel<HTMLDivElement>();
 
   return (
-    <section className="frame py-24">
-      <div className="flex flex-wrap items-end justify-between gap-6">
-        <div>
+    <section className="frame relative min-h-[850px] overflow-hidden py-20 lg:py-[120px]">
+      <div className="pointer-events-none absolute inset-0 bg-[repeating-linear-gradient(90deg,transparent_0,transparent_319px,rgba(56,69,132,0.28)_320px,transparent_321px)]" />
+      <div className="relative z-10 flex flex-nowrap items-center justify-between gap-6">
+        <div className="w-[832px] shrink-0">
           <p className="text-[22px] leading-[1.2] font-bold uppercase text-magenta-light">
             Students Testimonial
           </p>
-          <h2 className="mt-4 text-[48px] leading-[1.17] font-semibold text-text">
+          <h2 className="mt-[21px] whitespace-nowrap text-[48px] leading-[56px] font-semibold text-text">
             Our students sharing their thoughts
           </h2>
         </div>
-        <div className="flex gap-1.25">
+        <div className="flex w-[161px] shrink-0 gap-[5px]">
           <CarouselArrowButton
             direction="prev"
             onClick={scrollPrev}
@@ -41,14 +42,14 @@ export function TestimonialCarousel({
 
       <div
         ref={trackRef}
-        className="no-scrollbar mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto"
+        className="no-scrollbar relative z-10 mt-[76px] flex snap-x snap-mandatory gap-6 overflow-x-auto"
       >
         {testimonials.map((t) => (
           <div
             key={t.name}
-            className="flex w-full shrink-0 snap-start flex-col sm:flex-row"
+            className="flex h-auto w-full shrink-0 snap-start flex-col gap-6 sm:h-[431px] sm:flex-row"
           >
-            <div className="relative h-64 w-full shrink-0 sm:h-107.75 sm:w-102.75">
+            <div className="relative h-64 w-full shrink-0 sm:h-[431px] sm:w-[411px]">
               <Image
                 src={t.image}
                 alt={t.name}
@@ -57,18 +58,18 @@ export function TestimonialCarousel({
                 className="object-cover"
               />
             </div>
-            <div className="flex flex-col justify-center gap-10.5 border border-[#D9D9D9] p-7.75">
-              <span aria-hidden className="text-5xl font-serif text-white/20">
+            <div className="flex min-w-0 flex-1 flex-col justify-center gap-[42px] border border-[#D9D9D9] p-[31px] sm:h-[431px] sm:w-[838px] sm:flex-none">
+              <span aria-hidden className="font-sans text-[67px] leading-[51px] font-bold text-white/20">
                 &ldquo;
               </span>
-              <p className="text-[22px] leading-normal text-white">
+              <p className="text-[22px] leading-[33px] text-white">
                 {t.quote}
               </p>
               <div className="flex flex-col gap-2">
-                <p className="text-[22px] leading-normal font-medium text-white">
+                <p className="text-[22px] leading-[33px] font-medium text-white">
                   {t.name}
                 </p>
-                <p className="text-lg leading-normal text-white">{t.role}</p>
+                <p className="text-lg leading-[27px] text-white">{t.role}</p>
               </div>
             </div>
           </div>

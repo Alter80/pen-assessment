@@ -83,10 +83,10 @@ export type Partner = {
 };
 
 export const partners: Partner[] = [
-  { name: "Ravensbourne University London", logo: "/logos/ravensbourne.png" },
+  { name: "Ravensbourne University London", logo: "/images/RavensBourne-university-london-logo.svg" },
   {
     name: "Arts University Plymouth",
-    logo: "/logos/arts-university-plymouth.png",
+    logo: "/images/Arts-university-plymount-logo.svg",
   },
 ];
 
