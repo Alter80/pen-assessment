@@ -37,7 +37,7 @@ export function Header() {
   const navItems = isHomepage ? simpleNavItems : fullNavItems;
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/40 bg-card-alt bg-[repeating-linear-gradient(90deg,transparent_0,transparent_319px,rgba(56,69,132,0.28)_320px,transparent_321px)]">
+    <header className="relative z-50 bg-card-alt bg-[repeating-linear-gradient(90deg,transparent_0,transparent_319px,rgba(56,69,132,0.28)_320px,transparent_321px)]">
       <div className="frame flex h-25 items-center justify-between">
         <Link href="/" className="shrink-0">
           <LogoLockup />
@@ -49,7 +49,7 @@ export function Header() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="flex items-center gap-1 text-default font-medium uppercase text-text transition-colors hover:text-white"
+                className="flex items-center gap-1 whitespace-nowrap text-[16px] leading-6 font-medium uppercase text-text transition-colors hover:text-white"
               >
                 {!isHomepage && <span className="text-pink">/</span>}
                 {item.label}
@@ -61,7 +61,7 @@ export function Header() {
           {!isHomepage && (
             <Link
               href="#"
-              className="hidden items-center gap-2 rounded-btn border border-border bg-navy px-6 py-3 text-default font-medium text-white transition-colors hover:bg-card-alt lg:inline-flex"
+              className="hidden shrink-0 items-center gap-2 whitespace-nowrap border-2 border-white bg-navy px-6 py-3 text-[16px] leading-6 font-medium text-white transition-colors hover:bg-card-alt lg:inline-flex"
             >
               Apply Now
               <ArrowRight className="h-4 w-4" />
@@ -106,7 +106,7 @@ export function Header() {
             <Link
               href="#"
               onClick={() => setMenuOpen(false)}
-              className="inline-flex w-fit items-center gap-2 rounded-btn border border-border bg-navy px-6 py-3 text-default font-medium text-white"
+              className="inline-flex w-fit items-center gap-2 rounded-btn border-2 border-white bg-navy px-6 py-3 text-default font-medium text-white"
             >
               Apply Now
               <ArrowRight className="h-4 w-4" />
