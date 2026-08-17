@@ -34,3 +34,7 @@ Maybe I've built the course details page, also will try to make the all 3 pages 
 ## Stack
 
 Next.js (App Router), TypeScript, Tailwind CSS, and `lucide-react`.
+
+## AI Tools
+
+Claude Code, Codex
