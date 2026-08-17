@@ -1,4 +1,4 @@
-# VCAD Web Developer Code Test
+# PEN GROUP Assessment Test
 
 A responsive Next.js implementation of the supplied VCAD homepage, course listing, and course-detail designs.
 
